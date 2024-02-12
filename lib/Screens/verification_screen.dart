@@ -15,7 +15,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
     Timer(
       const Duration(seconds: 2,milliseconds: 5),
       () {
-        Navigator.of(context).pushReplacementNamed('category');
+        Navigator.of(context).pushReplacementNamed('nav');
       },
     );
     return SafeArea(

@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(
-      Duration(seconds: 5),
+      const Duration(seconds: 5),
       () {
         Navigator.of(context).pushReplacementNamed('intro');
       },

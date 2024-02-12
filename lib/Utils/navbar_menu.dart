@@ -21,28 +21,32 @@ class _NavBarState extends State<NavBar> {
     WishListScreen(),
     ProfileScreen(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
           color: Colors.white,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 20,
-              color: Colors.black.withOpacity(.1),
+              color: Colors.grey,
+              spreadRadius: 1,
+
             )
           ],
         ),
         child: SafeArea(
           child: SizedBox(
-            height: 85,
+            height: 90,
+            width: 200,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: ClipRRect(
                 child: GNav(
                   tabBorderRadius: 20,
@@ -50,12 +54,14 @@ class _NavBarState extends State<NavBar> {
                   hoverColor: Colors.grey[100]!,
                   gap: 10,
                   activeColor: Colors.black,
-                  iconSize: 30,
+                  iconSize: 27,
                   haptic: true,
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   duration: const Duration(milliseconds: 200),
                   tabBackgroundColor: Colors.grey[200]!,
                   color: Colors.black,
+                  style: GnavStyle.google,
                   tabs: const [
                     GButton(
                       icon: Icons.home,

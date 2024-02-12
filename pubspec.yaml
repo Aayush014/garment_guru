@@ -37,7 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^6.1.0
   google_nav_bar: ^5.0.6
-  easy_animated_tabbar: ^0.0.1
 
 dev_dependencies:
   flutter_test:

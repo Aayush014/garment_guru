@@ -19,9 +19,10 @@ class _IntroScreenState extends State<IntroScreen> {
           Column(
             children: [
               const SizedBox(height: 25),
+              //Image Container
               Container(
-                height: 460,
-                width: 365,
+                height: MediaQuery.of(context).size.height*0.50,
+                width: MediaQuery.of(context).size.width*0.90,
                 decoration: const BoxDecoration(
                   color: Colors.grey,
                   borderRadius: BorderRadius.only(
@@ -39,6 +40,7 @@ class _IntroScreenState extends State<IntroScreen> {
               const SizedBox(
                 height: 30,
               ),
+              //2. Text
               SizedBox(
                 height: 225,
                 width: 365,
@@ -46,9 +48,9 @@ class _IntroScreenState extends State<IntroScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '20% Discount\nNew Arrival Product',
+                      '\t20% Discount\n\tNew Arrival Product',
                       style: GoogleFonts.poppins(
-                          fontSize: 34,
+                          fontSize: 32,
                           color: Colors.black,
                           fontWeight: FontWeight.bold),
                     ),
@@ -56,7 +58,7 @@ class _IntroScreenState extends State<IntroScreen> {
                       height: 10,
                     ),
                     Text(
-                        'Shop the latest trends to make \nyourself more beautiful with this app.',
+                        '\tShop the latest trends to make \n\tyourself more beautiful with this\n\tapp.',
                         style: GoogleFonts.poppins(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -64,6 +66,7 @@ class _IntroScreenState extends State<IntroScreen> {
                   ],
                 ),
               ),
+              //3.Button
               Align(
                 alignment: Alignment.centerLeft,
                 child: Row(
@@ -117,8 +120,8 @@ class _IntroScreenState extends State<IntroScreen> {
             children: [
               const SizedBox(height: 25),
               Container(
-                height: 460,
-                width: 365,
+                height: MediaQuery.of(context).size.height*0.50,
+                width: MediaQuery.of(context).size.width*0.90,
                 decoration: const BoxDecoration(
                   color: Colors.grey,
                   borderRadius: BorderRadius.only(
@@ -143,9 +146,9 @@ class _IntroScreenState extends State<IntroScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Take Advantage Of\nThe Offer Shopping',
+                      '\tTake Advantage Of\n\tThe Offer Shopping',
                       style: GoogleFonts.poppins(
-                          fontSize: 34,
+                          fontSize: 32,
                           color: Colors.black,
                           fontWeight: FontWeight.bold),
                     ),
@@ -153,7 +156,7 @@ class _IntroScreenState extends State<IntroScreen> {
                       height: 10,
                     ),
                     Text(
-                        'Your one-stop shop for all things\nfashion with this app.',
+                        '\tYour one-stop shop for all things\n\tfashion with this app.',
                         style: GoogleFonts.poppins(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -215,8 +218,8 @@ class _IntroScreenState extends State<IntroScreen> {
             children: [
               const SizedBox(height: 25),
               Container(
-                height: 460,
-                width: 365,
+                height: MediaQuery.of(context).size.height*0.50,
+                width: MediaQuery.of(context).size.width*0.90,
                 decoration: const BoxDecoration(
                   color: Colors.grey,
                   borderRadius: BorderRadius.only(
@@ -241,9 +244,9 @@ class _IntroScreenState extends State<IntroScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'All Types Offers\nWithin Your Reach',
+                      '\tAll Types Offers\n\tWithin Your Reach',
                       style: GoogleFonts.poppins(
-                          fontSize: 34,
+                          fontSize: 32,
                           color: Colors.black,
                           fontWeight: FontWeight.bold),
                     ),
@@ -251,7 +254,7 @@ class _IntroScreenState extends State<IntroScreen> {
                       height: 10,
                     ),
                     Text(
-                        'Publish up your selfies to make\nyourself more beautiful with this app.',
+                        '\tPublish up your selfies to make\n\tyourself more beautiful with this\n\tapp.',
                         style: GoogleFonts.poppins(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -309,14 +312,14 @@ class _IntroScreenState extends State<IntroScreen> {
           ),
         ]),
         floatingActionButton: SizedBox(
-          height: 70,
-          width: 130,
+          height: MediaQuery.of(context).size.height*0.085,
+          width: MediaQuery.of(context).size.width*0.35,
           child: FloatingActionButton(
             backgroundColor: Colors.black,
             onPressed: () {
               setState(() {
                 if (index == 2) {
-                  Navigator.of(context).pushReplacementNamed('verify');
+                  Navigator.of(context).pushNamed('verify');
                 } else {
                   index = index + 1;
                 }

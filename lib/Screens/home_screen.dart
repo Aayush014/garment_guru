@@ -1,4 +1,3 @@
-import 'package:easy_animated_tabbar/easy_animated_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 15,
               ),
+              //appbar
               Center(
                 child: SizedBox(
                   height: 60,
@@ -35,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
-                        height: 45,
-                        width: 45,
+                        height: 40,
+                        width: 40,
                         decoration: const BoxDecoration(
                           color: Colors.black,
                           borderRadius: BorderRadius.all(
@@ -47,8 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.white, size: 30),
                       ),
                       Container(
-                        height: 60,
-                        width: 60,
+                        height: 50,
+                        width: 50,
                         decoration: const BoxDecoration(
                           boxShadow: [
                             BoxShadow(
@@ -66,10 +66,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-              ), //appbar
+              ),
               const SizedBox(
                 height: 20,
               ),
+              //welcome Text
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: SizedBox(
@@ -82,12 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         'Welcome,',
                         style: GoogleFonts.poppins(
-                            fontSize: 35, fontWeight: FontWeight.w600),
+                            fontSize: 32, fontWeight: FontWeight.w600),
                       ),
                       Text(
                         'Our Fashion App',
                         style: GoogleFonts.poppins(
-                            fontSize: 25,
+                            fontSize: 22,
                             fontWeight: FontWeight.w500,
                             color: Colors.grey),
                       )
@@ -96,18 +97,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ), //
               const SizedBox(
-                height: 4,
-              ), // welcomeText
+                height: 2,
+              ),
+              //searchBar
               SizedBox(
                 height: 70,
+                width: MediaQuery.of(context).size.width,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(4),
                       child: Container(
                         height: 50,
-                        width: 290,
+                        width: MediaQuery.of(context).size.width * 0.75,
                         decoration: BoxDecoration(
                           color: Colors.grey.shade300,
                           borderRadius: BorderRadius.circular(25),
@@ -130,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(1),
                       child: Container(
                         width: 50,
                         height: 50,
@@ -142,7 +145,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   ],
                 ),
-              ), //searchBar
+              ),
+              //shoes
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: Container(
@@ -214,7 +218,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-              ), //shoes
+              ),
+              //Category
               Padding(
                 padding: const EdgeInsets.all(14),
                 child: SizedBox(
@@ -226,34 +231,57 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              EasyAnimatedTab(
-                buttonTitles: buttons,
-                onSelected: (index) {},
-                animationDuration: 500,
-                activeBorderRadius: 20,
-                deActiveBorderRadius: 20,
-                minWidthOfItem: 75,
-                minHeightOfItem: 20,
-                deActiveItemColor: Colors.grey.shade200,
-                activeItemColor: Colors.black,
-                activeTextStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14.5,
-                    fontWeight: FontWeight.bold),
-                deActiveTextStyle: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold),
-              ), //categories
-              Padding(
-                padding: const EdgeInsets.all(15),
-                child: Container(
-                  height: 500,
-                  width: MediaQuery.of(context).size.width,
-                  color: Colors.grey,
-                  //child: ListView.builder(itemBuilder: itemBuilder)
+              SizedBox(
+                height: 420,
+                // color: Colors.grey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).pushNamed('t-shirt');
+                              });
+                            },
+                            child: customBox(
+                                Image.asset(cate[0]['img1']), 'T-Shirt')),
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).pushNamed('shoes');
+                              });
+                            },
+                            child: customBox(
+                                Image.asset(cate[0]['img2']), 'Shoes')),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).pushNamed('bag');
+                              });
+                            },
+                            child: customBox(
+                                Image.asset(cate[0]['img3']), 'Bags')),
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).pushNamed('jacket');
+                              });
+                            },
+                            child: customBox(
+                                Image.asset(cate[0]['img4']), 'Jackets')),
+                      ],
+                    ),
+                  ],
                 ),
-              ),
+              )
             ],
           ),
         ),
@@ -262,39 +290,35 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// Column(
-// children: [
-// SizedBox(height: 20,),
-// Row(
-// mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-// children: [
-// Container(
-// height: 200,
-// width: 150,
-// decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15)),
-// ),
-// Container(
-// height: 200,
-// width: 150,
-// decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15)),
-// ),
-// ],
-// ),
-// SizedBox(height: 20,),
-// Row(
-// mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-// children: [
-// Container(
-// height: 200,
-// width: 150,
-// decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15)),
-// ),
-// Container(
-// height: 200,
-// width: 150,
-// decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15)),
-// ),
-// ],
-// ),
-// ],
-// ),
+Widget customBox(Image l1, String s1) {
+  return Container(
+    width: 150,
+    height: 180,
+    decoration: BoxDecoration(
+        gradient: LinearGradient(colors: [Colors.grey.shade300, Colors.white]),
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: const [
+          BoxShadow(color: Colors.grey, spreadRadius: 1, blurRadius: 5)
+        ]),
+    child: Column(
+      children: [
+        Container(
+          alignment: Alignment.center,
+          height: 130,
+          width: 150,
+          decoration: BoxDecoration(
+            //color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: l1,
+        ),
+        Text(
+          s1,
+          style: GoogleFonts.poppins(
+            fontSize: 18,
+          ),
+        )
+      ],
+    ),
+  );
+}
