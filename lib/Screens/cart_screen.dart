@@ -97,6 +97,7 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 40,),
                   const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(24, 15, 24, 0),
                     child: Row(
@@ -114,6 +115,7 @@ class _CartScreenState extends State<CartScreen> {
                       ],
                     ),
                   ),
+                  SizedBox(height: 10,),
                   const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
                     child: Row(
@@ -131,6 +133,7 @@ class _CartScreenState extends State<CartScreen> {
                       ],
                     ),
                   ),
+                  SizedBox(height: 10,),
                   const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 24),
                     child: Row(
@@ -157,28 +160,6 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                 ],
               ),
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            height: 100,
-            decoration: const BoxDecoration(
-              color: Colors.black12,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 4,
-                  color: Color(0x320E151B),
-                )
-              ],
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
-              ),
-            ),
-            alignment: const AlignmentDirectional(0, -0.35),
-            child: const Text(
-              'Checkout (\$1705)',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
             ),
           ),
         ],

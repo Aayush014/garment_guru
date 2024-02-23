@@ -98,12 +98,12 @@ Widget itemBox(Image l1, String tName, String bName, String p, index,) {
     height: 210,
     width: 315,
     decoration: BoxDecoration(
-      color: Colors.grey.shade200,
+      color: Colors.white,
       boxShadow: const [
         BoxShadow(
           color: Colors.grey,
-          blurRadius: 7,
-          spreadRadius: 0.5,
+          blurRadius: 2,
+          spreadRadius: 0.4,
         ),
       ],
       borderRadius: BorderRadius.circular(20),

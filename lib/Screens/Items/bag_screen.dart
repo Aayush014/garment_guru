@@ -180,11 +180,11 @@ Widget itemBox(
     height: 210,
     width: 315,
     decoration: BoxDecoration(
-      color: Colors.grey.shade200,
-      boxShadow: const [
+      color: Colors.white,
+      boxShadow: [
         BoxShadow(
           color: Colors.grey,
-          blurRadius: 7,
+          blurRadius: 2,
           spreadRadius: 0.5,
         ),
       ],
